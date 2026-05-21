@@ -70,7 +70,7 @@ const setupDb = async () => {
     }
 };
 
-app.post('/api/setup-db', async (req, res) => {
+app.get('/api/setup-db', async (req, res) => {
     try {
         await setupDb();
         res.json({ success: true, message: "Database schema verified" });
