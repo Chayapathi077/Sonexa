@@ -1,0 +1,6 @@
+{
+  "name": "Sonexa",
+  "description": "Fetal Medical Reporting Application",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

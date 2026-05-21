@@ -1,0 +1,50 @@
+{
+  "entities": {
+    "Template": {
+      "title": "Template",
+      "description": "A reusable snippet of text for reports",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "category": { "type": "string" },
+        "name": { "type": "string" },
+        "content": { "type": "string" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["id", "userId", "category", "name", "content", "createdAt"]
+    },
+    "Report": {
+      "title": "Report",
+      "description": "A medical report for a patient",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "createdAt": { "type": "number" },
+        "updatedAt": { "type": "number" },
+        "patientName": { "type": "string" },
+        "patientId": { "type": "string" },
+        "age": { "type": "string" },
+        "gender": { "type": "string" },
+        "referredBy": { "type": "string" },
+        "visitNo": { "type": "string" },
+        "visitDate": { "type": "string" },
+        "lmpDate": { "type": "string" },
+        "lmpEdd": { "type": "string" },
+        "details": { "type": "string" }
+      },
+      "required": ["id", "userId", "createdAt", "updatedAt", "patientName"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/templates/{templateId}": {
+      "schema": { "$ref": "#/entities/Template" },
+      "description": "User-specific report templates"
+    },
+    "/users/{userId}/reports/{reportId}": {
+      "schema": { "$ref": "#/entities/Report" },
+      "description": "User-specific medical reports"
+    }
+  }
+}
